@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    <div class="stars"></div> <!-- Yıldızlar efekti için ekledik -->
+
     <header>
         <h1 class="logo">scene'SFrame</h1>
     </header>

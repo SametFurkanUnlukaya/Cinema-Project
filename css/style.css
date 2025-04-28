@@ -8,17 +8,39 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Yıldızlar Efekti */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent url('../img/star.png') repeat top center;
+    z-index: 0; /* Her şeyin arkasında */
+    animation: starsMove 200s linear infinite;
+    opacity: 0.2; /* Çok hafif görünür */
+    pointer-events: none;
+}
+
+@keyframes starsMove {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 1000px;}
 }
 
 /* Header */
 header {
     text-align: center;
     padding: 30px 0 10px;
+    z-index: 1;
 }
 
 .logo {
     font-size: 2.5rem;
-    color: #ff4500; /* Turuncuya yakın kırmızı */
+    color: #ff0000b4; /* Turuncuya yakın kırmızı */
     margin: 0;
 }
 
@@ -28,6 +50,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+    padding-top: 200px; /* Üst boşluk eklendi */
 }
 
 /* Hoşgeldiniz Kutusu */
@@ -36,12 +61,15 @@ main {
     padding: 40px;
     margin-top: 50px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .welcome-box h2 {
-    color: #ffa500; /* Turuncu */
+    font-size: 1.8rem;
+    color: #ffae00c2; /* Turuncu */
     margin-bottom: 20px;
 }
 
@@ -52,35 +80,39 @@ main {
 }
 
 .btn {
-    background-color: #b22222; /* Kırmızımsı */
-    color: #ffa500;
+    background-color: #860202; /* Kırmızımsı */
+    color: #fbff00ab;
     text-decoration: none;
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 10px;
     transition: 0.3s;
+    z-index: 1;
 }
 
 .btn:hover {
-    background-color: #ff4500;
-    transform: scale(1.1);
+    background-color: #803737;
+    transform: scale(1.3);
 }
 
 /* En Yeni Filmler Kutusu */
 .movies-box {
     margin-top: 100px;
     text-align: center;
+    z-index: 1;
 }
 
 .movies-box h2 {
     font-size: 1.8rem;
-    color: #ffa500;
+    color: #ffae00c2;
     margin-bottom: 10px;
+    margin-top: 80px
 }
 
 .movies-box p {
     color: #dcdcdc;
     font-size: 1rem;
+    margin-top: 10px;
 }
 
 /* Footer */
@@ -90,4 +122,5 @@ footer {
     padding: 15px 0;
     font-size: 0.9rem;
     color: #888;
+    z-index: 1;
 }
