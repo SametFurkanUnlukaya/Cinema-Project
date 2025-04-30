@@ -1,5 +1,5 @@
 <?php
-// İleride kullanıcı giriş yaptıysa dashboard'a yönlendirme kodu buraya eklenecek
+
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="stars"></div> <!-- Yıldızlar efekti için ekledik -->
+    <div class="stars"></div> 
 
     <header>
         <h1 class="logo">scene'SFrame</h1>
@@ -28,7 +28,7 @@
 
         <section class="movies-box">
             <h2>En Yeni Filmleri Görmeye Hazır mısın?</h2>
-            <p>Biletini al, sahnelerin en güzel çerçevesine ulaş!</p>
+            <p>Biletini al, sahnenin en güzel karesini bizimle izle!</p>
         </section>
     </main>
 
