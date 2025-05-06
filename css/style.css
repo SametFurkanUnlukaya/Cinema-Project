@@ -61,7 +61,7 @@ main {
     padding: 40px;
     margin-top: 50px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 89, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 89, 255, 0.7);
     text-align: center;
     position: relative;
     z-index: 1;
@@ -131,6 +131,7 @@ footer {
     font-size: 0.9rem;
     color: #888;
     z-index: 1;
+    margin-top:auto;
 }
 
 
@@ -252,4 +253,94 @@ form button[type="submit"]:hover {
 .btn-admin {
     padding: 10px 20px;
     font-size: 13px;
+}
+
+
+
+
+/*Panel ekranı*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0c2a;
+    padding: 20px 40px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #00d8ff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+}
+
+.navbar .sepet {
+    background-color: #00ffb3d8;
+    padding: 8px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.vizyonda {
+    margin: 50px auto 20px;
+    text-align: left;
+    width: 90%;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(0, 255, 221);
+    background-color: #12122b;
+    padding: 10px 20px;
+    border-left: 5px solid rgb(0, 255, 221);
+    border-radius: 8px;
+}
+
+.kategoriler {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.kategoriler button {
+    padding: 10px 20px;
+    background-color: #1c1f3a;
+    border: none;
+    color: #00d8ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.kategoriler button:hover {
+    background-color: #2d39a8;
+}
+
+.filmler {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding-bottom: 50px;
+}
+
+.film-karti {
+    width: 150px;
+    height: 210px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }

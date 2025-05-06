@@ -25,9 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['fullname'] = $user['fullname'];
                 $_SESSION['role'] = $user['role'];
+                $_SESSION['user_email']=$user['email'];
 
                 // Kullanıcı paneline yönlendir
-                header("Location: ../pages/dashboard.php");
+                header("Location: ../pages/panel.php");
                 exit;
             } elseif ($user['is_approved'] == 0) {
                 echo "<script>alert('Hesabınız henüz yönetici tarafından onaylanmamış.');</script>";
