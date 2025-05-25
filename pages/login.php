@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Kullanıcıyı email'e göre çek
-    $stmt = $conn->prepare("SELECT id, fullname, email, password, role, is_approved FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, fullname, email, password, role, is_approved, must_change_password FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -26,6 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['fullname'] = $user['fullname'];
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['user_email']=$user['email'];
+                //zorunlu şifre değişikliği
+                if ($user['must_change_password'] == 1) {
+                    header("Location: ../pages/change_password.php");
+                    exit;
+                }
 
                 // Kullanıcı paneline yönlendir
                 header("Location: ../pages/panel.php");
