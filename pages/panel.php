@@ -41,17 +41,13 @@ if ($is_admin && isset($_POST['etkinlik_ekle'])) {
 // --- Etkinlik silme işlemi (sadece admin) ---
 if ($is_admin && isset($_POST['delete_event'])) {
     $del_id = intval($_POST['delete_event']);
-    // Resmi de silmek istersen dosyayı bul ve unlink kullanabilirsin!
     $conn->query("DELETE FROM events WHERE id = $del_id");
     echo "<script>alert('Etkinlik silindi!');window.location='panel.php';</script>";
     exit;
 }
 
-// --- Sepete ekle (örnek, geliştirmeye açık) ---
+// --- Sepete ekle (örnek) ---
 if (!$is_admin && isset($_POST['add_to_cart'])) {
-    // Burada sepete ekleme işlemini yapabilirsin.
-    // $_POST['add_to_cart'] ile event_id alınır, $_SESSION ile veya veritabanına eklenebilir.
-    // Şimdilik uyarı bırakalım:
     echo "<script>alert('Etkinlik sepete eklendi (örnek)!');</script>";
 }
 
@@ -80,8 +76,9 @@ $events = $conn->query("SELECT * FROM events ORDER BY event_date DESC");
     </nav>
 
     <?php if ($is_admin): ?>
-        <div style="text-align:right; width:90%; margin: 20px auto;">
+        <div style="text-align:right; width:90%; margin: 20px auto; display: flex; justify-content: flex-end; gap: 30px;">
             <a href="#" class="btn" onclick="document.getElementById('etkinlikEkle').style.display='block'">+ Etkinlik Ekle</a>
+            <a href="../includes/admin_onay.php" class="btn">Kullanıcı Onayları</a>
         </div>
         <!-- Etkinlik ekleme formu (modal gibi) -->
         <div id="etkinlikEkle" style="display:none; width:90%; margin:0 auto; background:#161838; border-radius:12px; padding:20px;">
